@@ -79,7 +79,7 @@ class Sift {
     return std::make_tuple(keypoints, descriptors);
   }
 
-  sift_output_t Extract(const Eigen::Ref<const pyimage_t<float>>& image) {
+  sift_output_t Extract(const Eigen::Ref<const pyimage_t<uint8_t>>& image, const Eigen::Ref<const pyimage_t<uint8_t>>& mask) {
     const pyimage_t<uint8_t> image_f = (image * 255.0f).cast<uint8_t>();
     return Extract(image_f);
   }
