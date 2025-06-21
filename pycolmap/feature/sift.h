@@ -60,6 +60,14 @@ class Sift {
         /*topdown=*/true);
     const Bitmap bitmap(bitmap_raw);
 
+    for (int y = 0; y < mask.rows(); ++y) {
+      for (int x = 0; x < mask.cols(); ++x) {
+        if (mask(y, x) == 0) {
+          bitmap.SetPixel(x, y, 0.0f);
+        }
+      }
+    }
+
     FeatureKeypoints keypoints_;
     FeatureDescriptors descriptors_;
     THROW_CHECK(extractor_->Extract(bitmap, &keypoints_, &descriptors_))
