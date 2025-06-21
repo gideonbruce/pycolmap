@@ -114,6 +114,14 @@ void BindSift(py::module& m) {
            "options"_a = sift_options,
            "device"_a = Device::AUTO)
       .def("extract",
+          [](Sift& sift,
+              const Eigen::Ref<const pyimage_t<uint8_t>>& image,
+              const Eigen::Ref<const pyimage_t<uint8_t>>& mask) {
+              return sift.Extract(image, mask);
+          },
+          "image"_a.noconvert(), "mask"_a.noconvert())
+
+      .def("extract",
            py::overload_cast<const Eigen::Ref<const pyimage_t<uint8_t>>&>(
                &Sift::Extract),
            "image"_a.noconvert())
