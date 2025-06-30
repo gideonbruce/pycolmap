@@ -1,8 +1,4 @@
-<p align="center">
-  <b>
-    ⚠️ <a href="https://github.com/colmap/colmap/tree/main/pycolmap">The development of PyCOLMAP has moved to the COLMAP repository.</a> ⚠️<br>PyCOLMAP remains available on <a href="https://pypi.org/project/pycolmap/">PyPi</a>. This repository will be archived soon.
-  </b>
-</p>
+# Pycolmap with masks
 
 # Python bindings for COLMAP
 
